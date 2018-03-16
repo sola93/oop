@@ -10,16 +10,26 @@ namespace lab1
 {
     class Shapeslist
     {
-        public static List<Figure> list = new List<Figure>();
-        
+        public static List<Figure> list;
+
         static Shapeslist()
         {
-            list.Add(new Circle(new Point(30, 30), 20));
-            list.Add(new Ellipse(new Point(30, 30), 50, 30));
-            list.Add(new Square(new Point(100, 100), 50));
-            list.Add(new Shapes.Rectangle(new Point(100, 100), 20, 80));
-            list.Add(new Segment(new Point(30,30), new Point(60,70)));
-            list.Add(new Triangle(new Point(30,30), new Point(80,100), new Point(20,70)));
+            list = new List<Figure>();
+        }
+        public static void AddShape(Figure figure)
+        {
+            list.Add(figure);
+        }
+
+        public static void RemoveShape(Figure figure)
+        {
+            list.Remove(figure);
+        }
+
+        public static void Accept(IVisitor visitor, Graphics g)
+        {
+            foreach (var t in list)
+                t.Accept(visitor, g);
         }
     }
 }

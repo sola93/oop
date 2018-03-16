@@ -24,9 +24,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(572, 214);
+            this.button1.Location = new System.Drawing.Point(572, 191);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 139);
+            this.button1.Size = new System.Drawing.Size(177, 139);
             this.button1.TabIndex = 0;
             this.button1.Text = "Отрисовка";
             this.button1.UseVisualStyleBackColor = true;
@@ -45,7 +45,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(591, 30);
+            this.listBox1.Location = new System.Drawing.Point(572, 12);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(177, 173);
             this.listBox1.TabIndex = 2;

@@ -16,10 +16,17 @@ namespace lab1
         public Form1()
         {
             InitializeComponent();
-            foreach(var t in Shapeslist.list)
+            Shapeslist.AddShape(new Circle(new Point(30, 30), 20));
+            Shapeslist.AddShape(new Ellipse(new Point(60, 50), 50, 30));
+            Shapeslist.AddShape(new Square(new Point(130, 100), 50));
+            Shapeslist.AddShape(new Shapes.Rectangle(new Point(200, 100), 20, 80));
+            Shapeslist.AddShape(new Segment(new Point(240, 30), new Point(260, 70)));
+            Shapeslist.AddShape(new Triangle(new Point(300, 30), new Point(280, 100), new Point(320, 70)));
+            foreach (var t in Shapeslist.list)
             {
                 listBox1.Items.Add(t.ToString());
             }
+            listBox1.Enabled = false;
         }
 
         private bool start_paint;
@@ -27,7 +34,7 @@ namespace lab1
 
         private void button1_Click(object sender, EventArgs e)
         {
-             start_paint = true;
+            start_paint = true;
             Refresh();
         }
 
@@ -35,7 +42,7 @@ namespace lab1
         {
             if (start_paint)
             {
-                Shapeslist.list[number].Accept(new DrawVisitor(), e.Graphics);
+                Shapeslist.Accept(new DrawVisitor(), e.Graphics);
                 start_paint = false;
                 Refresh();
             }
