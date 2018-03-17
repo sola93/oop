@@ -40,7 +40,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(444, 308);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.paint);
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint);
             // 
             // listBox1
             // 
@@ -49,7 +49,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(177, 173);
             this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 

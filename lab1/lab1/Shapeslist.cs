@@ -1,34 +1,31 @@
 ﻿using lab1.Shapes;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using lab1.Visitor;
 
 namespace lab1
 {
     class Shapeslist
     {
-        public static List<Figure> list;
+        public static List<Figure> List;
 
         static Shapeslist()
         {
-            list = new List<Figure>();
+            List = new List<Figure>();
         }
         public static void AddShape(Figure figure)
         {
-            list.Add(figure);
+            List.Add(figure);
         }
 
         public static void RemoveShape(Figure figure)
         {
-            list.Remove(figure);
+            List.Remove(figure);
         }
 
         public static void Accept(IVisitor visitor, Graphics g)
         {
-            foreach (var t in list)
+            foreach (var t in List)
                 t.Accept(visitor, g);
         }
     }

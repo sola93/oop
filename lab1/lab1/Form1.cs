@@ -1,13 +1,8 @@
 ﻿using lab1.Shapes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using lab1.Visitor;
 
 namespace lab1
 {
@@ -22,35 +17,29 @@ namespace lab1
             Shapeslist.AddShape(new Shapes.Rectangle(new Point(200, 100), 20, 80));
             Shapeslist.AddShape(new Segment(new Point(240, 30), new Point(260, 70)));
             Shapeslist.AddShape(new Triangle(new Point(300, 30), new Point(280, 100), new Point(320, 70)));
-            foreach (var t in Shapeslist.list)
+            foreach (var t in Shapeslist.List)
             {
                 listBox1.Items.Add(t.ToString());
             }
             listBox1.Enabled = false;
         }
 
-        private bool start_paint;
-        private int number;
+        private bool _startPaint;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            start_paint = true;
+            _startPaint = true;
             Refresh();
         }
 
-        private void paint(object sender, PaintEventArgs e)
+        private new void Paint(object sender, PaintEventArgs e)
         {
-            if (start_paint)
+            if (_startPaint)
             {
                 Shapeslist.Accept(new DrawVisitor(), e.Graphics);
-                start_paint = false;
+                _startPaint = false;
                 Refresh();
             }
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            number = listBox1.SelectedIndex;
         }
     }
 }
