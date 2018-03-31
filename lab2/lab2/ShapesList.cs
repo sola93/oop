@@ -23,7 +23,7 @@ namespace lab2
         {
             List.Remove(figure);
         }
-        //call method accept for all shapes in list
+
         public static void Accept(Graphics g)
         {
             foreach (var t in List)

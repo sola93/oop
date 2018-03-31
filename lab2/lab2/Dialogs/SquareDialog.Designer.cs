@@ -130,7 +130,7 @@
         #endregion
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox Width;
+        public new System.Windows.Forms.TextBox Width;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;

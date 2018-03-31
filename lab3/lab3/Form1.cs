@@ -66,5 +66,15 @@ namespace lab3
             ShapesList.RemoveShape(ShapesList.List[listBox1.SelectedIndex]);
             ListUpdate();
         }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
